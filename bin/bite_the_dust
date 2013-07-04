@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+require 'bite_the_dust'
