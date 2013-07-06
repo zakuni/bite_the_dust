@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = BiteTheDust::VERSION
   spec.authors       = ["zakuni"]
   spec.email         = ["kunio038@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Fire something when the specified time arrives.}
+  spec.summary       = %q{Fire something on time.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
