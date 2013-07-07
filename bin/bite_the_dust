@@ -1,3 +1,12 @@
 #!/usr/bin/env ruby
 
 require 'bite_the_dust'
+
+#Ref. http://shokai.org/blog/archives/7364
+max=60
+max.downto(0) do |i|
+  puts "#{i} "+"|"*i+" "*(max-i)
+  sleep 1
+  print "\x1b[1A"
+end
+`say 終了`
