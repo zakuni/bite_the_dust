@@ -1,9 +1,32 @@
 #!/usr/bin/env ruby
 
 require 'bite_the_dust'
+require 'optparse'
+require 'ostruct'
+
+options = OpenStruct.new
+
+opt_parser = OptionParser.new do |opts|
+  opts.separator ""
+  opts.separator "Common options:"
+
+  # No argument, shows at tail.  This will print an options summary.
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+
+  # Another typical switch to print the version.
+  opts.on_tail("-v", "--version", "Show version") do
+    puts BiteTheDust::VERSION
+    exit
+  end
+end
+
+arg_time = opt_parser.parse(ARGV)
 
 #Ref. http://shokai.org/blog/archives/7364
-max=60
+max = arg_time[0].to_i
 max.downto(0) do |i|
   puts "#{i} "+"|"*i+" "*(max-i)
   sleep 1
