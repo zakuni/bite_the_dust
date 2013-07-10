@@ -12,4 +12,10 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
   def test_initialize
     assert_instance_of BiteTheDust, BiteTheDust.new
   end
+
+  def test_future?
+    assert_respond_to(@bitethedust, :future?)
+    assert(@bitethedust.future?(2112))
+    refute(@bitethedust.future?(1900))
+  end
 end
