@@ -1,6 +1,6 @@
 # BiteTheDust
 
-TODO: Write a gem description
+[![Build Status](https://travis-ci.org/zakuni/bite_the_dust.png?branch=master)](https://travis-ci.org/zakuni/bite_the_dust)
 
 ## Installation
 
