@@ -1,11 +1,11 @@
 require "bite_the_dust/version"
 
 module BiteTheDust
-  class BiteTheDust
-    def self.future?(time)
+  def self.future?(time)
       Time.now < time
-    end
-
+  end
+  
+  class BiteTheDust
     def initialize(time)
       @time = time
     end
