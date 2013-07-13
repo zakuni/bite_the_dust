@@ -16,14 +16,14 @@ module BiteTheDust
       Time.now < @time
     end
 
-    def set_timer
+    def set_timer(function)
       if future? then
         begin
           num_of_seconds = @time - Time.now
           EM.run do
-            puts "timer set"
             EM.add_timer(num_of_seconds.to_i) do
-              puts "done"
+              function.call
+              yield if block_given?
               EM.stop_event_loop
             end
           end
