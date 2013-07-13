@@ -4,7 +4,7 @@ require File.expand_path 'test_helper', File.dirname(__FILE__)
 
 class TestBiteTheDust < MiniTest::Unit::TestCase
   def setup
-    @bitethedust = BiteTheDust::BiteTheDust.new(Time.new(2100-01-01))
+    @bitethedust = BiteTheDust::BiteTheDust.new(Time.now+5)
     @future = Time.new(2100-01-01)
     @past = Time.new(1900-01-01)    
   end
@@ -24,5 +24,10 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
     assert_respond_to(@bitethedust, :future?)
     assert BiteTheDust::BiteTheDust.new(@future).future?
     refute BiteTheDust::BiteTheDust.new(@past).future?
+  end
+
+  def test_set_timer
+    assert_respond_to(@bitethedust, :set_timer)
+    assert @bitethedust.set_timer
   end
 end
