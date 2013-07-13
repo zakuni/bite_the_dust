@@ -28,6 +28,6 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
 
   def test_set_timer
     assert_respond_to(@bitethedust, :set_timer)
-    assert @bitethedust.set_timer
+    assert @bitethedust.set_timer(lambda{puts "done"})
   end
 end
