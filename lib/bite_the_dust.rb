@@ -5,15 +5,21 @@ module BiteTheDust
   def future?(time)
       Time.now < time
   end
+
+  def countdown(sec)
+
+  end
   module_function :future?
+  module_function :countdown
 
   class BiteTheDust
     def initialize(time)
+      @now = Time.now
       @time = time
     end
 
     def future?
-      Time.now < @time
+      @now < @time
     end
 
     def set_timer(function)
@@ -31,7 +37,6 @@ module BiteTheDust
           puts "Time too far"
           false
         end
-        true
       else
         false
       end
