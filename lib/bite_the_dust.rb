@@ -33,6 +33,7 @@ module BiteTheDust
               EM.stop_event_loop
             end
           end
+          true
         rescue RangeError
           puts "Time too far"
           false
