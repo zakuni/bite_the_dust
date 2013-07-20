@@ -15,6 +15,10 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
     refute BiteTheDust.future?(@past)
   end
 
+  def test_self_countdown
+    assert_respond_to BiteTheDust, :countdown
+  end
+
   def test_initialize
     assert_raises(ArgumentError) { BiteTheDust::BiteTheDust.new }
     assert_instance_of BiteTheDust::BiteTheDust, BiteTheDust::BiteTheDust.new(Time.new(2100-01-01))
