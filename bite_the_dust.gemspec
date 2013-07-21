@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["kunio038@gmail.com"]
   spec.description   = %q{Fire something when the specified time arrives.}
   spec.summary       = %q{Fire something on time.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/zakuni/bite_the_dust"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
