@@ -28,18 +28,16 @@ module BiteTheDust
       @now < @time
     end
 
-    def set_timer(function)
+    def set_timer(&block)
       if future? then
         begin
           num_of_seconds = @time - Time.now
           EM.run do
             EM.add_timer(num_of_seconds.to_i) do
-              function.call
-              yield if block_given?
-              EM.stop_event_loop
+              EM.stop_event_loop              
+              return block.call
             end
           end
-          true
         rescue RangeError
           puts "Time too far"
           false
