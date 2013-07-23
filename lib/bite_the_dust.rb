@@ -6,12 +6,11 @@ module BiteTheDust
       Time.now < time
   end
 
-  def countdown(sec, function)
+  def countdown(sec, &block)
     EM.run do
-      EM.add_timer(num_of_seconds.to_i) do
-        function.call
-        yield if block_given?
-        EM.stop_event_loop
+      EM.add_timer(sec) do
+        EM.stop_event_loop        
+        return block.call
       end
     end
   end
