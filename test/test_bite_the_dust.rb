@@ -17,6 +17,7 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
 
   def test_self_countdown
     assert_respond_to BiteTheDust, :countdown
+    assert_equal "done", BiteTheDust.countdown(2){|n| "done"}
   end
 
   def test_initialize
