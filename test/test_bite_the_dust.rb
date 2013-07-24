@@ -6,7 +6,9 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
   def setup
     @bitethedust = BiteTheDust::BiteTheDust.new(Time.now+5)
     @future = Time.new(2100-01-01)
-    @past = Time.new(1900-01-01)    
+    @past   = Time.new(1900-01-01)
+    @btd_future = BiteTheDust::BiteTheDust.new(@future)
+    @btd_past   = BiteTheDust::BiteTheDust.new(@past)
   end
 
   def test_self_future?
@@ -27,8 +29,8 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
 
   def test_future?
     assert_respond_to(@bitethedust, :future?)
-    assert BiteTheDust::BiteTheDust.new(@future).future?
-    refute BiteTheDust::BiteTheDust.new(@past).future?
+    assert @btd_future.future?
+    refute @btd_past.future?
   end
 
   def test_set_timer
