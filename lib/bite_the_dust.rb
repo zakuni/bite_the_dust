@@ -38,11 +38,10 @@ module BiteTheDust
             end
           end
         rescue RangeError
-          puts "Time too far"
-          false
+          raise RangeError, "Time too far"
         end
       else
-        false
+        return block.call
       end
     end
   end
