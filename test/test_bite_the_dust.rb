@@ -36,5 +36,9 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
   def test_set_timer
     assert_respond_to(@bitethedust, :set_timer)
     assert_equal "done", @bitethedust.set_timer {|n| "done"}
+    assert_equal "done", @btd_past.set_timer {|n| "done"}
+    assert_raises RangeError do
+      @btd_future.set_timer {|n| "done"}
+    end
   end
 end
