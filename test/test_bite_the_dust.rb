@@ -13,12 +13,14 @@ class TestBiteTheDust < MiniTest::Unit::TestCase
 
   def test_self_future?
     assert_respond_to BiteTheDust, :future?
+    assert_respond_to BTD, :future?
     assert BiteTheDust.future?(@future)
     refute BiteTheDust.future?(@past)
   end
 
   def test_self_countdown
     assert_respond_to BiteTheDust, :countdown
+    assert_respond_to BTD, :countdown
     assert_equal "done", BiteTheDust.countdown(2){|n| "done"}
   end
 
