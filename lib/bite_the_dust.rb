@@ -1,6 +1,7 @@
 require "eventmachine"
 require "bite_the_dust/version"
 
+BTD = BiteTheDust
 module BiteTheDust
   def future?(time)
       Time.now < time
