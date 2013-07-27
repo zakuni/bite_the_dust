@@ -18,7 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'bite_the_dust'
+
+# output "done" after 5 seconds.
+BTD.countdown(5){|n| puts "done"}
+```
 
 ## Contributing
 
