@@ -3,11 +3,11 @@ require "bite_the_dust/version"
 
 BTD = BiteTheDust
 module BiteTheDust
-  def future?(time)
+  def self.future?(time)
       Time.now < time
   end
 
-  def countdown(sec, &block)
+  def self.countdown(sec, &block)
     EM.run do
       EM.add_timer(sec) do
         EM.stop_event_loop        
@@ -15,8 +15,6 @@ module BiteTheDust
       end
     end
   end
-  module_function :future?
-  module_function :countdown
 
   class BiteTheDust
     def initialize(time)
